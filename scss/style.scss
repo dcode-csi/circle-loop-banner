@@ -18,7 +18,7 @@ figure {
 		position: fixed;
 		top: 50%;
 		left: 50%;
-		margin-top: -$size/3.5;
+		margin-top: -$size/3.2;
 		margin-left: -$size/2;
 
 		ul {
@@ -33,6 +33,9 @@ figure {
 				width: 100%;
 				height: 100%;
 				opacity: 0.7;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: 9999px;
 				transition: 1s;
 
 				h2 {
@@ -43,7 +46,7 @@ figure {
 					left: 50%;
 					transform: translateX(-50%);
 					letter-spacing: 2px;
-					transition: 1s;
+					transition: 1.5s;
 				}
 
 				> .inner {
@@ -53,9 +56,10 @@ figure {
 					top: 0;
 					left: 0;
 					border-radius: 50%;
+					background-image: inherit;
 					background-repeat: no-repeat;
 					background-size: cover;
-					background-position: 9999px;
+					background-position: center;
 
 					&::before,
 					&::after {
@@ -81,8 +85,54 @@ figure {
 						opacity: 0.7;
 					}
 				}
+
+				a {
+					position: absolute;
+					width: 40px;
+					height: 40px;
+					bottom: 0%;
+					border-radius: 20px;
+					left: 50%;
+					opacity: 0;
+					transform: translateX(-50%);
+					transition: opacity 1s, bottom 1s, width 0.5s 1s;
+
+					&::before,
+					span {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						font: 11px/1 'arial';
+						color: #fff;
+						content: '';
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						border-radius: 20px;
+						background-position: center;
+						background-image: inherit;
+						background-size: cover;
+						background-repeat: no-repeat;
+						overflow: hidden;
+					}
+
+					span {
+						opacity: 0;
+						text-indent: -40px;
+						transition: 0.5s 1.4s;
+					}
+
+					&::before {
+						transform: translateY(30%);
+						filter: blur(10px) saturate(2);
+						opacity: 0.8;
+					}
+				}
 			}
 
+			//목록 순서별 위치 및 모양
 			li {
 				&:nth-of-type(1) {
 					transform: translateX(-($size * 3 + $gap)) scale(0.6);
@@ -114,12 +164,21 @@ figure {
 						font-size: 14vw;
 						opacity: 0.4;
 						color: #fff;
-						top: -21vh;
+						top: -20vh;
 						letter-spacing: 0px;
 					}
 					> .inner::before,
 					> .inner::after {
 						transform: rotate($deg * 0);
+					}
+					a {
+						opacity: 1;
+						bottom: -25%;
+						width: 200px;
+						span {
+							opacity: 1;
+							text-indent: 0px;
+						}
 					}
 				}
 
