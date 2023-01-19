@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -26,7 +26,7 @@ figure .banner {
   position: fixed;
   top: 50%;
   left: 50%;
-  margin-top: -160px;
+  margin-top: -114.2857142857px;
   margin-left: -200px;
 }
 figure .banner ul {
@@ -41,6 +41,16 @@ figure .banner ul li {
   width: 100%;
   height: 100%;
   opacity: 0.7;
+  transition: 1s;
+}
+figure .banner ul li h2 {
+  font: normal 24px/1 "anton";
+  color: #ccc;
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  letter-spacing: 2px;
   transition: 1s;
 }
 figure .banner ul li > .inner {
@@ -98,6 +108,13 @@ figure .banner ul li:nth-of-type(3) > .inner::after {
 figure .banner ul li:nth-of-type(4) {
   opacity: 1;
   transform: translateX(0px) scale(1);
+}
+figure .banner ul li:nth-of-type(4) h2 {
+  font-size: 14vw;
+  opacity: 0.4;
+  color: #fff;
+  top: -21vh;
+  letter-spacing: 0px;
 }
 figure .banner ul li:nth-of-type(4) > .inner::before,
 figure .banner ul li:nth-of-type(4) > .inner::after {

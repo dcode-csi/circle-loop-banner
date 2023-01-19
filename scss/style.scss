@@ -1,5 +1,5 @@
 @import 'reset';
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 $size: 400px;
 $gap: 20px;
@@ -18,7 +18,7 @@ figure {
 		position: fixed;
 		top: 50%;
 		left: 50%;
-		margin-top: -$size/2.5;
+		margin-top: -$size/3.5;
 		margin-left: -$size/2;
 
 		ul {
@@ -34,6 +34,17 @@ figure {
 				height: 100%;
 				opacity: 0.7;
 				transition: 1s;
+
+				h2 {
+					font: normal 24px/1 'anton';
+					color: #ccc;
+					position: absolute;
+					top: 120%;
+					left: 50%;
+					transform: translateX(-50%);
+					letter-spacing: 2px;
+					transition: 1s;
+				}
 
 				> .inner {
 					width: 100%;
@@ -98,6 +109,14 @@ figure {
 				&:nth-of-type(4) {
 					opacity: 1;
 					transform: translateX(0px) scale(1);
+
+					h2 {
+						font-size: 14vw;
+						opacity: 0.4;
+						color: #fff;
+						top: -21vh;
+						letter-spacing: 0px;
+					}
 					> .inner::before,
 					> .inner::after {
 						transform: rotate($deg * 0);
