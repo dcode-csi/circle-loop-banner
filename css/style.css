@@ -43,10 +43,11 @@ header {
 header h1 {
   font: bold 24px/1 "arial";
   color: #777;
+  transition: 0.5s;
 }
 header #gnb {
   display: flex;
-  gap: 50px;
+  gap: 70px;
   font: bold 16px/1 "arial";
   letter-spacing: 1px;
   color: #aaa;
@@ -250,7 +251,7 @@ figure .btns > * {
   width: 120px;
   height: 36px;
   border-radius: 18px;
-  background: linear-gradient(30deg, #999, #bbb);
+  background: #999;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: center;
@@ -261,7 +262,8 @@ figure .btns > * {
   transition: 0.5s;
 }
 figure .btns > *:hover {
-  background: linear-gradient(30deg, #555, #777);
+  width: 150px;
+  background: #555;
 }
 figure .btns.off {
   right: 5vw;

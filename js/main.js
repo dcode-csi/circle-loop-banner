@@ -35,6 +35,7 @@ open.forEach(btn => {
 		pop.classList.add('on');
 		e.currentTarget.classList.add('off');
 		btns.classList.add('off');
+		document.querySelector('header h1').style.color = '#fff';
 	})
 })
 
@@ -42,6 +43,7 @@ close.addEventListener('click', e => {
 	pop.classList.remove('on');
 	banner_ul.querySelector('li.on a').classList.remove('off');
 	btns.classList.remove('off');
+	document.querySelector('header h1').style.color = '#777';
 })
 
 function activation() {
