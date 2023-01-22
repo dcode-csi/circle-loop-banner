@@ -1,9 +1,28 @@
 * {
-  margin: 0; padding: 0; box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
-ul,ol,li {
-  list-style: none;
+ul,
+ol,
+li {
+	list-style: none;
 }
 a {
-  text-decoration: none;
+	text-decoration: none;
+}
+
+.pop::-webkit-scrollbar {
+	width: 8px;
+}
+
+.pop::-webkit-scrollbar-thumb {
+	height: 10%;
+	background: rgba(255, 255, 255, 0.5);
+
+	border-radius: 10px;
+}
+
+.pop::-webkit-scrollbar-track {
+	background: rgba(33, 122, 244, 0);
 }

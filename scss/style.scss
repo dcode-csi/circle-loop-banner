@@ -1,9 +1,33 @@
-@import 'reset';
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import "reset";
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 
 $size: 400px;
 $gap: 20px;
 $deg: 50deg;
+
+header {
+	width: 88vw;
+	height: 120px;
+	position: absolute;
+	top: 0;
+	left: 6vw;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	z-index: 3;
+
+	h1 {
+		font: bold 24px/1 "arial";
+		color: #777;
+	}
+	#gnb {
+		display: flex;
+		gap: 50px;
+		font: bold 16px/1 "arial";
+		letter-spacing: 1px;
+		color: #aaa;
+	}
+}
 
 figure {
 	width: 100%;
@@ -18,7 +42,7 @@ figure {
 		position: fixed;
 		top: 50%;
 		left: 50%;
-		margin-top: -$size/3.2;
+		margin-top: -$size/2.5;
 		margin-left: -$size/2;
 
 		ul {
@@ -39,7 +63,7 @@ figure {
 				transition: 1s;
 
 				h2 {
-					font: normal 24px/1 'anton';
+					font: normal 24px/1 "anton";
 					color: #ccc;
 					position: absolute;
 					top: 120%;
@@ -63,7 +87,7 @@ figure {
 
 					&::before,
 					&::after {
-						content: '';
+						content: "";
 						position: absolute;
 						width: 100%;
 						height: 100%;
@@ -102,9 +126,9 @@ figure {
 						display: flex;
 						justify-content: center;
 						align-items: center;
-						font: 11px/1 'arial';
+						font: 11px/1 "arial";
 						color: #fff;
-						content: '';
+						content: "";
 						position: absolute;
 						top: 0;
 						left: 0;
@@ -156,6 +180,7 @@ figure {
 					}
 				}
 
+				//활성화 순번의 패널
 				&:nth-of-type(4) {
 					opacity: 1;
 					transform: translateX(0px) scale(1);
@@ -179,6 +204,9 @@ figure {
 							opacity: 1;
 							text-indent: 0px;
 						}
+					}
+					a.off {
+						opacity: 0;
 					}
 				}
 
@@ -209,13 +237,100 @@ figure {
 
 	.btns {
 		position: absolute;
-		bottom: 10vh;
+		bottom: 13vh;
 		right: 10vw;
 		display: flex;
 		gap: 50px;
+		transition: 0.5s;
 
 		> * {
 			cursor: pointer;
+			width: 120px;
+			height: 36px;
+			border-radius: 18px;
+			background: linear-gradient(30deg, #999, #bbb);
+			box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font: 12px/1 "arial";
+			letter-spacing: 1px;
+			color: #fff;
+			transition: 0.5s;
+
+			&:hover {
+				background: linear-gradient(30deg, #555, #777);
+			}
 		}
+
+		&.off {
+			right: 5vw;
+			opacity: 0;
+		}
+	}
+
+	.pop {
+		width: 50vw;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: -50vw;
+		background: rgba(0, 0, 0, 0.05);
+		border-right: 1px solid rgba(0, 0, 0, 0.02);
+		backdrop-filter: blur(10px);
+		padding: 22vh 5vw 10vh 6vw;
+		transition: 0.5s 0s;
+
+		h2 {
+			font: 12vw/1 "anton";
+			color: #fff;
+			margin-bottom: 40px;
+			opacity: 0;
+			transform: translateX(-100px);
+			transition: 1s 0.3s;
+		}
+
+		p {
+			font: 22px/1.2 "arial";
+			color: #fff;
+			letter-spacing: 1px;
+			margin-bottom: 50px;
+			opacity: 0;
+			transform: translateX(-100px);
+			transition: 0.5s 0.8s;
+		}
+
+		.close {
+			display: flex;
+			width: 200px;
+			height: 40px;
+			border-radius: 0px;
+			justify-content: center;
+			border: 2px solid #fff;
+			align-items: center;
+			font: bold 16px/1 "arial";
+			color: #fff;
+			letter-spacing: 1px;
+			cursor: pointer;
+			opacity: 0;
+			transform: translateX(-100px);
+			transition: 0.5s;
+
+			&:hover {
+				background: #fff;
+				color: lightblue;
+			}
+		}
+	}
+}
+
+.pop.on {
+	left: 0;
+
+	h2,
+	p,
+	.close {
+		opacity: 1;
+		transform: translateX(0px);
 	}
 }

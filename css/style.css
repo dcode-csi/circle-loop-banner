@@ -5,12 +5,51 @@
   box-sizing: border-box;
 }
 
-ul, ol, li {
+ul,
+ol,
+li {
   list-style: none;
 }
 
 a {
   text-decoration: none;
+}
+
+.pop::-webkit-scrollbar {
+  width: 8px;
+}
+
+.pop::-webkit-scrollbar-thumb {
+  height: 10%;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+}
+
+.pop::-webkit-scrollbar-track {
+  background: rgba(33, 122, 244, 0);
+}
+
+header {
+  width: 88vw;
+  height: 120px;
+  position: absolute;
+  top: 0;
+  left: 6vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 3;
+}
+header h1 {
+  font: bold 24px/1 "arial";
+  color: #777;
+}
+header #gnb {
+  display: flex;
+  gap: 50px;
+  font: bold 16px/1 "arial";
+  letter-spacing: 1px;
+  color: #aaa;
 }
 
 figure {
@@ -26,7 +65,7 @@ figure .banner {
   position: fixed;
   top: 50%;
   left: 50%;
-  margin-top: -125px;
+  margin-top: -160px;
   margin-left: -200px;
 }
 figure .banner ul {
@@ -174,6 +213,9 @@ figure .banner ul li:nth-of-type(4) a span {
   opacity: 1;
   text-indent: 0px;
 }
+figure .banner ul li:nth-of-type(4) a.off {
+  opacity: 0;
+}
 figure .banner ul li:nth-of-type(5) {
   transform: translateX(440px) scale(0.6);
 }
@@ -197,13 +239,92 @@ figure .banner ul li:nth-of-type(7) > .inner::after {
 }
 figure .btns {
   position: absolute;
-  bottom: 10vh;
+  bottom: 13vh;
   right: 10vw;
   display: flex;
   gap: 50px;
+  transition: 0.5s;
 }
 figure .btns > * {
   cursor: pointer;
+  width: 120px;
+  height: 36px;
+  border-radius: 18px;
+  background: linear-gradient(30deg, #999, #bbb);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: 12px/1 "arial";
+  letter-spacing: 1px;
+  color: #fff;
+  transition: 0.5s;
+}
+figure .btns > *:hover {
+  background: linear-gradient(30deg, #555, #777);
+}
+figure .btns.off {
+  right: 5vw;
+  opacity: 0;
+}
+figure .pop {
+  width: 50vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -50vw;
+  background: rgba(0, 0, 0, 0.05);
+  border-right: 1px solid rgba(0, 0, 0, 0.02);
+  backdrop-filter: blur(10px);
+  padding: 22vh 5vw 10vh 6vw;
+  transition: 0.5s 0s;
+}
+figure .pop h2 {
+  font: 12vw/1 "anton";
+  color: #fff;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: 1s 0.3s;
+}
+figure .pop p {
+  font: 22px/1.2 "arial";
+  color: #fff;
+  letter-spacing: 1px;
+  margin-bottom: 50px;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: 0.5s 0.8s;
+}
+figure .pop .close {
+  display: flex;
+  width: 200px;
+  height: 40px;
+  border-radius: 0px;
+  justify-content: center;
+  border: 2px solid #fff;
+  align-items: center;
+  font: bold 16px/1 "arial";
+  color: #fff;
+  letter-spacing: 1px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: 0.5s;
+}
+figure .pop .close:hover {
+  background: #fff;
+  color: lightblue;
+}
+
+.pop.on {
+  left: 0;
+}
+.pop.on h2,
+.pop.on p,
+.pop.on .close {
+  opacity: 1;
+  transform: translateX(0px);
 }
 
 /*# sourceMappingURL=style.css.map */
