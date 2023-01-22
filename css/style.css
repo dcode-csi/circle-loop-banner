@@ -68,6 +68,7 @@ figure .banner {
   left: 50%;
   margin-top: -160px;
   margin-left: -200px;
+  transition: 0.5s;
 }
 figure .banner ul {
   width: 100%;
@@ -316,17 +317,94 @@ figure .pop .close {
 }
 figure .pop .close:hover {
   background: #fff;
-  color: lightblue;
+  color: #555;
 }
-
-.pop.on {
+figure .pop.on {
   left: 0;
 }
-.pop.on h2,
-.pop.on p,
-.pop.on .close {
+figure .pop.on h2,
+figure .pop.on p,
+figure .pop.on .close {
   opacity: 1;
   transform: translateX(0px);
+}
+
+@media screen and (max-width: 1199px) {
+  header {
+    width: 88vw;
+    left: 6vw;
+  }
+  header #gnb {
+    display: none;
+  }
+
+  figure .banner {
+    width: 280px;
+    height: 280px;
+    margin-top: -140px;
+    margin-left: -140px;
+  }
+  figure .banner ul li:nth-of-type(1) {
+    transform: translateX(-850px) scale(0.6);
+  }
+  figure .banner ul li:nth-of-type(2) {
+    transform: translateX(-570px) scale(0.6);
+  }
+  figure .banner ul li:nth-of-type(3) {
+    transform: translateX(-300px) scale(0.6);
+  }
+  figure .banner ul li:nth-of-type(4) {
+    opacity: 1;
+    transform: translateX(0px) scale(1);
+  }
+  figure .banner ul li:nth-of-type(4) h2 {
+    top: -8vh;
+    font-size: 25vw;
+  }
+  figure .banner ul li:nth-of-type(4) a {
+    width: 100%;
+  }
+  figure .banner ul li:nth-of-type(5) {
+    transform: translateX(300px) scale(0.6);
+  }
+  figure .banner ul li:nth-of-type(6) {
+    transform: translateX(570px) scale(0.6);
+  }
+  figure .banner ul li:nth-of-type(7) {
+    transform: translateX(850px) scale(0.6);
+  }
+  figure .btns {
+    width: 100%;
+    bottom: 5vh;
+    justify-content: center;
+    gap: 20px;
+    right: 0vw;
+  }
+  figure .pop {
+    width: 80vw;
+    left: -80vw;
+  }
+  figure .pop h2 {
+    font: 20vw/1 "anton";
+    color: #fff;
+  }
+  figure .pop p {
+    font: 16px/1.2 "arial";
+    color: #fff;
+    letter-spacing: 0px;
+  }
+  figure .pop .close {
+    width: 100%;
+  }
+  figure .pop.on {
+    left: 0;
+  }
+  figure .pop.on h2,
+figure .pop.on p,
+figure .pop.on .close {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
